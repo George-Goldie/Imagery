@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">    
+        <title>Page</title>
+        <style>
+          button{
+    background-color:cadetblue;
+    color:black;
+    padding-bottom: 0px;
+    position:relative;
+    bottom:0;
+  }
+  legend{
+    font-size: 20px;
+  }
+  fieldset{
+    width: 300px;
+    margin: auto;
+    text-align:left;
+  }
+  body{
+  font-family:"Poppins",sans-serif;
+    font-size: 12px; 
+    display: inline;
+     
+  }
+header {
+    background-color: aqua;
+    text-align: center;
+    color: black;
+    height: 200px;
+  }
+  footer {
+    background-color: gray;
+    text-align: left;
+    color: white;
+    height:10%;
+  }
+  
+  .text-area {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 20% 20% 20%;
+    height:400px;
+  }
+  
+  
+  .logo {
+    width: 65px;
+    height: 65px;
+    border-radius: 160px;
+    overflow: hidden;
+  }
+  button{
+    background-color:cadetblue;
+    color:black;
+    padding-bottom: 0px;
+    position:relative;
+    bottom:0;
+  }
+  legend{
+    font-size: 20px;
+  }
+  fieldset{
+    width: 300px;
+    margin: auto;
+    text-align:left;
+  }
+  /* Set image width */
+img{width: 50px;}
+
+/* Set image height */
+img{height: 50px;}
+
+/* Set image border */
+img{border-radius: 100px;}
+
+/*  */
+img{object-fit: cover;}
+img{overflow: hidden;}
+img{margin-top: 10px;}
+p{margin: auto;}
+
+
+function openImageOptions(event: MouseEvent) {
+  // Get the clicked image element
+  const clickedImage = event.target as HTMLImageElement;
+
+  // Create a popup element
+  const popup = document.createElement('div');
+  popup.className = 'image-popup';
+
+ // Add options to the popup
+  const options = ['Option 1', 'Option 2', 'Option 3'];
+  options.forEach(option => {
+    const button = document.createElement('button');
+    button.textContent = option;
+    button.addEventListener('click', () => {
+      // Handle the selected option
+      console.log(`Selected option: ${option}`);
+      // Close the popup
+      document.body.removeChild(popup);
+    });
+    popup.appendChild(button);
+  }); 
+
+  // Position the popup near the clicked image
+  const imageRect = clickedImage.getBoundingClientRect();
+  popup.style.top = `${imageRect.top}px`;
+  popup.style.left = `${imageRect.right}px`;
+
+  // Add the popup to the document
+  document.body.appendChild(popup);
+}
+
+// Attach the function to the click event of the image element
+const image = document.getElementById('myImage') as HTMLImageElement;
+image.addEventListener('click', openImageOptions);
+
+    const popupElement = document.createElement('div');
+    popupElement.className = 'popup';
+    const button1 = document.createElement('button');
+    button1.id = 'button1';
+    popupElement.appendChild(button1);
+    function imagePop(){
+        const pictureElement = document.getElementById('pic') as HTMLDivElement;
+        const popupElement = document.getElementById('popup') as HTMLDivElement;
+        const button1Element = document.getElementById('button1');
+        pictureElement.addEventListener('click', () => {
+            alert("Howdy");
+        });}
+    pictureElement.addEventListener('click',imagePop);
+}
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Welcome to Mutall Image Respository</h1>
+          </header>
+          <fieldset>
+            <label>
+              <input>
+              <input type="submit" value="Search">
+            </label>
+          </fieldset>
+
+          <div class="text-area">
+            <div class="source">
+              <legend>Source</legend>
+              <label>
+                <input type="radio" id="src1" >
+                <span>mutall55@gmail.com</span>
+              </label>
+              <br>
+              <label>
+                <input type="radio" id="src2" >
+                <span>jimkibe2030@gmail.com</span>
+              </label>
+              <br>
+              <label>
+                <input type="radio" id="src3" >
+                <span>Server</span>
+              </label>
+              <br>
+              <button id="add1">Add Source</button>
+              <button id="edit1">Edit Source</button>
+            </div>
+
+            <div class="event">
+              <legend>Event</legend>
+              <label>
+                <input type="radio" id="event1" >
+                <span>Ordination</span>
+              </label>
+              <br>
+              <label>
+                <input type="radio" id="event1" >
+                <span>Initiation Kiama Kia Ma</span>
+              </label>
+              <br>
+              <label>
+                <input type="radio" id="event1" >
+                <span>Kibiko Wedding</span>
+              </label>
+              <br>
+              <label>
+                <input type="radio" id="event1" >
+                <span>Server</span>
+              </label>
+              <br>
+            <button id="add2">Add Event</button>
+            <button id="edit2">Edit Event</button>
+            </div>  
+              //Formulate SQL count query
+const sqlresult = `SELECT COUNT(*) FROM (SELECT url, keyword, source FROM image WHERE keyword LIKE '%wedding%') AS subquery;`;
+//
+//Run the query against the database
+const results1 = await server.exec(
+    'database',
+    ['mutall_imagery', false],
+    'get_sql_data',
+    [sqlresult]
+);
+const resultsElement = document.getElementById('results');
+results.appendChild(results1);
+
+            <div class="images">
+              <legend> Image Preview</legend>
+              <button id="add3">Add Image</button>
+              <button id="edit3">Edit Image</button>
+            </div>
+          </div>
+          
+         <div class="pic">
+            <img src="http://206.189.207.206/pictures/mtop/wild_life_photos/elephant/DSC03045.JPG" alt="">
+
+            <!-- smaller div to hold image details -->
+            <div class="details">
+                <p>Source: SERVER</p>
+                <p>Keyword: WILD LIFE ELEPHANT</p>
+            </div>
+        </div>
+        
+          <footer>
+            <p>&copy;This image repository was developed by <a href ="munyahub">George Munya</a>
+              <img class="logo" src="https://lh3.googleusercontent.com/x7nJjq2_nEWxboeNnPQq1lqGs55EZGVie8UatieTs31D9LSXZ0whOYX56QHZNpKaJyvBQY5iaT_V4vvVfWEpiGvo_HkBkGV-dX-MWV_LwaSlqtM2WpQBDynL_KZ6EUmgBFMg8j-nww=w600-h315-p-k">
+           and <a href ="chrishub">Chris Kinyanjui </a>
+              <img class="logo" src="https://lh3.googleusercontent.com/vVYyOIl9wipv7gZBp_QFuhLyMwhSAHSLA4GHegh-qMtWMog0m3bt06-zOzvIDp1WtHDing8y6DyLK1O9jeZ_b0g93NtHXFQw65mT_HYlpCf0Ou-sTmmy9sul0uUVkY_K5lQfq6uUPA=w600-h315-p-k" />
+            </p>
+          </footer>
+    </body>
+</html>

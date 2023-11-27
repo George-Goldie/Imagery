@@ -1,0 +1,136 @@
+/*Set html to  full browser height, i.e, 100%*/
+html{height:100%;}
+
+/* Remove any margins*/
+*{margin: 0;}
+
+body{
+    /*Set body height*/
+    height: 100%;
+
+    /*The body is going to be divided into grids*/
+    display: grid;
+
+    /*Associate the grid area sections with the following names*/
+    grid-template-areas: 
+    "header"
+    "images"
+    "footer";
+  
+    /*There will be 3 row-wise sections*/
+    grid-template-rows: 20% 75% 5%;
+    
+    /*Set body font family from the import*/
+    font-family:"Poppins",sans-serif;
+ 
+    /*Set body font size to ordinary size*/
+    font-size: 12px;
+
+}
+
+header{
+    grid-area:header;
+    
+    /*Set header background color*/
+    background-color:aqua;
+
+    /*Set header text allignment*/
+    text-align: center;
+
+    /*Set header text color*/
+    color: black;
+
+    /*Set header font-size*/
+    font-size: 15px;
+}
+
+#images{
+    
+    grid-area:images;
+    
+    /*Set header background color*/
+       
+    
+    /*Add a scroll bar for the text_area to crontrol the overflow*/
+    overflow: auto;
+    
+    /* Set the display to flex*/
+    display:flex;
+    
+    /*Allow the images to fit the row first before moving to the next*/
+    flex-flow: row wrap;
+    
+}
+
+footer{
+    grid-area:footer;
+    
+    /*Set footer background color*/
+    background-color:grey;
+    
+    /* Set text alignment*/
+    text-align: center;
+}
+
+.logo{
+    /* Set footer image width to 50 pixels*/ 
+    width: 50px;
+    
+    /*Set footer image height to 50 pixels */
+    height: 50px;
+    
+    /* Set footer image border */
+    border-radius: 100px;
+    
+    /* Set footer image margin from the top of the footer section */
+    margin-top: 5px;
+}
+
+
+.pic{
+    /*Set the picture element height to half of that of text_area */
+    height:33.4%;
+    width:16.6%;
+} 
+
+.image{
+    /*
+    Set the image element to be 80% the size of the height of picture element*/
+    height:80%;
+}
+
+img{
+       /*
+    Set the image to be all the size of the height of image element*/
+    height:100%;
+    width:auto;
+}
+
+.details{
+    /*
+    Set the details div to be 20% the size of the height of picture element*/
+    height:20%;
+}
+#results{
+    /* Set the results paragraph to be at the center of the header*/
+    text-align: center;
+}
+.popup{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+    background-color:whitesmoke;
+    padding: 10px;
+    border:1px solid black;
+    text-align: center;
+    height:400px;
+    width:auto;
+}
+.imagediv{
+    height:80%;
+}
+.openButton{
+    position: relative;
+    top:30px;
+}

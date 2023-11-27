@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css">    
+        <title>Imagery</title>        
+        <script type="module">
+            //
+            //Importing the desired function
+            import {search_pictures} from "./search.js";
+            //
+            //Make the function visible beyond this script
+            window.search_pictures = search_pictures;
+        </script>
+    </head>
+    <body>
+        <!-- header section -->
+        <header>
+            <h1>Welcome to Mutall Image Repository</h1>
+           
+            <fieldset>
+                <legend>Search Criteria:</legend>
+                <label>
+                    Keyword: <input type="text" onchange="search_pictures(this)">
+                </label> 
+                <label>Size:
+                <input type="text" id="size"> 
+            </label> <br>
+                <label>Location:
+                <input type="text" id="location">
+            </label> 
+                <label>Date:
+                <input type="date" id="date">
+            </label> <br><br>
+                           
+                <!-- Go button for initiating the search-->
+                <button>Go</button>
+               </fieldset>
+               
+            
+            <p id="results"></p>
+<!--             <button onclick="imagery.load_data">Load Images</button>-->
+         
+        </header>
+          <!-- section to display images -->
+          <div id="images">
+          </div>          
+          <!-- footer section -->
+          <footer>
+            <p>&copy;This image repository was developed by <a href ="chrishub">Chris Kinyanjui </a>
+              & <a href ="munyahub">George Munya </a></p>
+          </footer>
+    </body>
+</html>
